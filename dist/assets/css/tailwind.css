@@ -1172,6 +1172,12 @@ video {
 .pb-24{
   padding-bottom: 6rem !important;
 }
+.pt-20{
+  padding-top: 5rem !important;
+}
+.pb-10{
+  padding-bottom: 2.5rem !important;
+}
 .pb-8{
   padding-bottom: 2rem !important;
 }
@@ -1216,6 +1222,9 @@ video {
 }
 .font-inter{
   font-family: "Inter", sans-serif !important;
+}
+.font-poppins{
+  font-family: "Poppins", sans-serif !important;
 }
 .text-4xl{
   font-size: 2.25rem !important;
@@ -1439,7 +1448,7 @@ h6,
 
 .section-subtitle{
   margin-bottom: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 115 29 / var(--tw-text-opacity));
@@ -1454,8 +1463,8 @@ h6,
 .section-title{
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2.5rem;
   max-width: 920px;
-  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -1474,6 +1483,12 @@ h6,
   .section-title{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px){
+  .section-title{
+    margin-bottom: 4.6rem;
   }
 }
 
