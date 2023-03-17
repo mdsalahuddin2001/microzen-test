@@ -516,6 +516,9 @@ video {
     padding-left: 6.25rem;
   }
 }
+.visible{
+  visibility: visible !important;
+}
 .fixed{
   position: fixed !important;
 }
@@ -612,6 +615,10 @@ video {
 .m-auto{
   margin: auto !important;
 }
+.mx-0{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
 .mx-auto{
   margin-left: auto !important;
   margin-right: auto !important;
@@ -644,6 +651,9 @@ video {
 .mt-3{
   margin-top: 0.75rem !important;
 }
+.mb-1{
+  margin-bottom: 0.25rem !important;
+}
 .mb-2{
   margin-bottom: 0.5rem !important;
 }
@@ -664,9 +674,6 @@ video {
 }
 .mt-5{
   margin-top: 1.25rem !important;
-}
-.mb-1{
-  margin-bottom: 0.25rem !important;
 }
 .mr-2{
   margin-right: 0.5rem !important;
@@ -711,6 +718,9 @@ video {
 .hidden{
   display: none !important;
 }
+.h-\[60px\]{
+  height: 60px !important;
+}
 .h-28{
   height: 7rem !important;
 }
@@ -749,6 +759,9 @@ video {
 }
 .w-full{
   width: 100% !important;
+}
+.w-\[60px\]{
+  width: 60px !important;
 }
 .w-28{
   width: 7rem !important;
@@ -879,10 +892,23 @@ video {
 .gap-4{
   gap: 1rem !important;
 }
+.gap-10{
+  gap: 2.5rem !important;
+}
 .space-x-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0 !important;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse)) !important;
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0 !important;
+  margin-right: calc(1rem * var(--tw-space-x-reverse)) !important;
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
+}
+.space-x-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0 !important;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse)) !important;
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse))) !important;
 }
 .space-x-10 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0 !important;
@@ -911,14 +937,14 @@ video {
 .rounded-lg{
   border-radius: 0.5rem !important;
 }
+.rounded-full{
+  border-radius: 9999px !important;
+}
 .rounded-md{
   border-radius: 0.375rem !important;
 }
 .rounded-3xl{
   border-radius: 1.5rem !important;
-}
-.rounded-full{
-  border-radius: 9999px !important;
 }
 .rounded{
   border-radius: 0.25rem !important;
@@ -1113,6 +1139,18 @@ video {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
 }
+.px-6{
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+.py-1\.5{
+  padding-top: 0.375rem !important;
+  padding-bottom: 0.375rem !important;
+}
+.py-1{
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
 .py-16{
   padding-top: 4rem !important;
   padding-bottom: 4rem !important;
@@ -1120,10 +1158,6 @@ video {
 .px-3{
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
-}
-.px-6{
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
 }
 .py-4{
   padding-top: 1rem !important;
@@ -1242,6 +1276,10 @@ video {
   font-size: 1.5rem !important;
   line-height: 2rem !important;
 }
+.text-3xl{
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
+}
 .text-sm{
   font-size: 0.875rem !important;
   line-height: 1.25rem !important;
@@ -1290,6 +1328,14 @@ video {
   --tw-text-opacity: 1 !important;
   color: rgb(255 247 233 / var(--tw-text-opacity)) !important;
 }
+.text-primaryOrange{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 115 29 / var(--tw-text-opacity)) !important;
+}
+.text-white{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
 .text-indigo-600{
   --tw-text-opacity: 1 !important;
   color: rgb(79 70 229 / var(--tw-text-opacity)) !important;
@@ -1297,10 +1343,6 @@ video {
 .text-slate-400{
   --tw-text-opacity: 1 !important;
   color: rgb(148 163 184 / var(--tw-text-opacity)) !important;
-}
-.text-white{
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 .text-red-600{
   --tw-text-opacity: 1 !important;
@@ -4258,6 +4300,12 @@ h6,
   }
   .\32xl\:mb-28{
     margin-bottom: 7rem !important;
+  }
+  .\32xl\:mb-6{
+    margin-bottom: 1.5rem !important;
+  }
+  .\32xl\:mt-16{
+    margin-top: 4rem !important;
   }
   .\32xl\:h-auto{
     height: auto !important;
