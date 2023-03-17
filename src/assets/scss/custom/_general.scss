@@ -1,0 +1,33 @@
+/* // _general.scss */
+
+/*********************************/
+/*             General            */
+/*===============================*/
+p {
+  @apply leading-relaxed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply leading-normal;
+}
+
+::selection {
+  @apply bg-indigo-600/90 text-white;
+}
+.section-subtitle {
+  @apply text-primaryOrange 2xl:text-[1.32rem] font-semibold uppercase mb-3;
+}
+.section-title {
+  @apply 2xl:text-5xl text-2xl md:text-3xl lg:text-4xl font-inter font-bold 2xl:leading-[4.25rem] text-lightText max-w-[920px] mx-auto;
+}
