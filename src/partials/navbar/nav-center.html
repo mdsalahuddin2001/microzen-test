@@ -1,52 +1,15 @@
 <!-- Start Navbar -->
 <nav id="topnav" class="defaultscroll is-sticky font-inter">
-  <div class="container">
+  <div class="container flex items-center justify-between">
     <!-- Logo container-->
     <a class="pl-0 logo" href="index.html">
-      <img
-        src="assets/images/logo.png"
-        class="inline-block dark:hidden"
-        alt=""
-      />
-      <img
-        src="assets/images/logo.png"
-        class="hidden dark:inline-block"
-        alt=""
-      />
+      <img src="/assets/images/logo.png" alt="" />
+    </a>
+    <a class="pl-0 logo-dark" href="index.html">
+      <img src="/assets/images/logo_dark.png" alt="" />
     </a>
 
     <!-- End Logo container-->
-    <div class="menu-extras">
-      <div class="menu-item">
-        <!-- Mobile menu toggle-->
-        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-          <div class="lines">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </a>
-        <!-- End mobile menu toggle-->
-      </div>
-    </div>
-
-    <!--nav right start-->
-    <ul class="flex py-6 mb-0 space-x-6 list-none nav-right">
-      <li class="flex items-center space-x-2">
-        <img src="../../assets/images/icons/phone.svg" alt="phone" />
-        <p class="text-white">+880 1711 123456</p>
-      </li>
-
-      <li class="flex items-center space-x-2">
-        <img src="../../assets/images/icons/search.svg" alt="search" />
-        <input
-          type="text"
-          placeholder="Search"
-          class="text-white bg-transparent focus:outline-none"
-        />
-      </li>
-    </ul>
-    <!--nav right end-->
 
     <div id="navigation">
       <!-- Navigation Menu-->
@@ -887,6 +850,50 @@
       <!--end navigation menu-->
     </div>
     <!--end navigation-->
+    <!--nav right start-->
+    <ul class="flex mb-0 space-x-6 list-none nav-right">
+      <li class="flex items-center mr-2 space-x-2">
+        <img src="../../assets/images/icons/phone.svg" alt="phone" />
+        <p class="whitespace-nowrap text-inherit">+880 1711 123456</p>
+      </li>
+
+      <li class="flex items-center space-x-2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.35-4.35"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-24 bg-transparent 3xl:w-auto focus:outline-none"
+        />
+      </li>
+    </ul>
+    <!--nav right end-->
+    <div class="menu-extras">
+      <div class="menu-item">
+        <!-- Mobile menu toggle-->
+        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+        <!-- End mobile menu toggle-->
+      </div>
+    </div>
   </div>
   <!--end container-->
 </nav>

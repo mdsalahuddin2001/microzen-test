@@ -2,18 +2,9 @@
 /*         Menu                  */
 /*===============================*/
 #topnav {
-  @apply fixed right-0 left-0 top-0 z-999 bg-transparent border-0 transition-all duration-500 ease-in-out;
-  .logo {
-    @apply float-left text-black dark:text-white #{!important};
-    .l-dark {
-      @apply hidden;
-    }
-    .l-light {
-      @apply inline-block;
-    }
-    &:focus {
-      @apply outline-none;
-    }
+  @apply fixed right-0 left-0 top-0 z-999 bg-transparent border-0 transition-all duration-500 ease-in-out py-6;
+  .logo-dark {
+    display: none;
   }
   .has-submenu {
     @apply relative;
@@ -101,7 +92,7 @@
     }
   }
   .nav-right {
-    @apply float-right leading-[74px];
+    @apply leading-[74px] text-white;
     > li {
       @apply leading-[initial];
     }
@@ -134,20 +125,13 @@
       }
     }
   }
-  .nav-right,
-  .buy-menu-btn {
-    .dropdown {
-      .dropdown-toggle {
-        @apply after:hidden;
-      }
-    }
-  }
+
   .navigation-menu {
     @apply list-none m-0 p-0;
     > li {
       @apply float-left block relative my-0 mx-[10px];
       > a {
-        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-[15px] #{!important};
+        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-5 py-2 #{!important};
         &:hover,
         &:active {
           @apply text-white #{!important};
@@ -170,7 +154,7 @@
     .has-submenu {
       .menu-arrow {
         border-width: 0 2px 2px 0;
-        @apply border-white dark:border-white rounded-[0.5px] inline-block p-[3px] rotate-[45deg] absolute transition-all duration-500 -right-px top-[30px];
+        @apply border-white dark:border-white rounded-[0.5px] inline-block p-[3px] rotate-[45deg] absolute transition-all duration-500 -right-px top-[15px];
       }
       &:hover {
         .menu-arrow {
@@ -180,7 +164,7 @@
     }
   }
   .menu-extras {
-    @apply float-right;
+    @apply hidden;
   }
   &.scroll {
     @apply bg-white dark:bg-slate-900 border-none shadow;
@@ -218,6 +202,9 @@
   }
   &.nav-sticky {
     @apply bg-white dark:bg-slate-900 shadow dark:shadow-gray-800;
+    .nav-right {
+      @apply text-black;
+    }
     .navigation-menu {
       & > li {
         & > a {
@@ -263,16 +250,6 @@
     &.tagline-height {
       @apply top-0 #{!important};
     }
-    .nav-right {
-      .login-btn-primary,
-      .btn-icon-dark {
-        @apply inline-block;
-      }
-      .login-btn-light,
-      .btn-icon-light {
-        @apply hidden;
-      }
-    }
 
     .logo {
       .l-dark {
@@ -286,7 +263,7 @@
 }
 
 .logo {
-  @apply font-bold text-[24px] mr-[15px] pt-0 px-[6px] pb-0 tracking-[1px] leading-[68px];
+  @apply font-bold text-[24px] mr-[15px] pt-0 px-[6px] pb-0 tracking-[1px];
 }
 
 @media (min-width: 1025px) {
@@ -323,7 +300,7 @@
       @apply flex flex-wrap justify-center;
       > .has-submenu {
         &:hover .menu-arrow {
-          @apply top-[33px] #{!important};
+          @apply top-[18px] #{!important};
         }
         &.active .menu-arrow {
           @apply top-[30px];
@@ -339,7 +316,7 @@
               transition: all 0.3s;
               @apply block py-[10px] px-5 clear-both whitespace-nowrap text-[11px] uppercase tracking-[0.04em] font-bold text-black dark:text-white leading-[17px];
               &:hover {
-                // @apply text-indigo-600 dark:text-indigo-600 #{!important};
+                @apply text-indigo-600 dark:text-indigo-600 #{!important};
               }
             }
             ul {
@@ -362,7 +339,6 @@
           }
         }
         > a {
-          @apply py-[25px] min-h-[62px];
         }
         &:hover {
           > .menu-arrow {
@@ -372,7 +348,7 @@
         &:hover,
         &.active {
           > a {
-            @apply text-white  #{!important};
+            @apply bg-[rgba(25,25,255,0.4)]  #{!important};
           }
         }
         &.last-elements {
@@ -419,9 +395,7 @@
         }
       }
     }
-    .nav-right {
-      @apply pl-[15px] ml-[15px];
-    }
+
     .navbar-toggle {
       @apply hidden;
     }
@@ -447,6 +421,113 @@
         }
       }
     }
+    &.nav-sticky {
+      .logo {
+        display: none;
+      }
+      .logo-dark {
+        display: block;
+      }
+      .navigation-menu {
+        @apply flex flex-wrap justify-center;
+        > .has-submenu {
+          &:hover .menu-arrow {
+            @apply top-[10px] #{!important};
+          }
+          &.active .menu-arrow {
+            @apply top-[30px];
+          }
+        }
+        > li {
+          .submenu {
+            transition: all 0.2s ease;
+            @apply absolute top-full left-0 z-[1000] py-[15px] px-0 list-none min-w-[180px] invisible opacity-0 mt-[10px] rounded-md bg-white dark:bg-slate-900 shadow dark:shadow-gray-800;
+            li {
+              @apply relative;
+              a {
+                transition: all 0.3s;
+                @apply block py-[10px] px-5 clear-both whitespace-nowrap text-[11px] uppercase tracking-[0.04em] font-bold text-black dark:text-white leading-[17px];
+                &:hover {
+                  @apply text-indigo-600 dark:text-indigo-600 #{!important};
+                }
+              }
+              ul {
+                @apply list-none pl-0 m-0;
+              }
+            }
+            &.megamenu {
+              @apply whitespace-nowrap left-1/2 -translate-x-1/2 fixed top-auto flex;
+              > li {
+                @apply overflow-hidden align-top w-1/5;
+                .submenu {
+                  @apply left-full top-0 ml-[10px] -mt-px;
+                }
+              }
+            }
+            > li {
+              .submenu {
+                @apply left-[101%] top-0 ml-[10px] -mt-px;
+              }
+            }
+          }
+          > a {
+          }
+          &:hover {
+            > .menu-arrow {
+              @apply text-white;
+            }
+          }
+          &:hover,
+          &.active {
+            > a {
+              @apply bg-transparent text-primaryBlue  #{!important};
+            }
+          }
+          &.last-elements {
+            .submenu {
+              @apply left-auto right-0 before:left-auto before:right-[10px];
+              > li {
+                &.has-submenu {
+                  .submenu {
+                    @apply left-auto right-full ml-0 mr-[10px];
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.nav-light {
+          > li {
+            > a {
+              @apply text-white/50 #{!important};
+            }
+            &.active {
+              > a {
+                @apply text-white #{!important};
+              }
+            }
+            &:hover {
+              > .menu-arrow {
+                @apply border-white #{!important};
+              }
+              > a {
+                @apply text-white #{!important};
+              }
+            }
+          }
+          .has-submenu {
+            .menu-arrow {
+              @apply border-white/50;
+            }
+            &.active {
+              .menu-arrow {
+                @apply border-white #{!important};
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -454,12 +535,13 @@
   #topnav {
     @apply bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 min-h-[74px];
     .logo {
-      .l-dark {
-        @apply inline-block #{!important};
-      }
-      .l-light {
-        @apply hidden #{!important};
-      }
+      @apply hidden;
+    }
+    .logo-dark {
+      @apply block;
+    }
+    .nav-right {
+      @apply text-black;
     }
     .container {
       @apply w-auto;
@@ -517,24 +599,15 @@
       }
     }
     .menu-extras {
+      @apply block #{!important};
       .menu-item {
-        @apply border-gray-200 dark:border-gray-700;
+        @apply block border-gray-200 dark:border-gray-700;
       }
     }
     .navbar-header {
       @apply float-left;
     }
 
-    .nav-right {
-      .login-btn-primary,
-      .btn-icon-dark {
-        @apply inline-block #{!important};
-      }
-      .login-btn-light,
-      .btn-icon-light {
-        @apply hidden;
-      }
-    }
     .has-submenu {
       .submenu {
         .submenu-arrow {
@@ -566,6 +639,9 @@
         }
       }
     }
+  }
+  .nav-right {
+    @apply hidden #{!important};
   }
 }
 
