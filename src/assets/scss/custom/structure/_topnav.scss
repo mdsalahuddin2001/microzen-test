@@ -503,15 +503,15 @@
             }
             &.active {
               > a {
-                @apply text-white #{!important};
+                @apply text-primaryBlue #{!important};
               }
             }
             &:hover {
               > .menu-arrow {
-                @apply border-white #{!important};
+                @apply border-primaryBlue #{!important};
               }
               > a {
-                @apply text-white #{!important};
+                @apply text-primaryBlue #{!important};
               }
             }
           }
@@ -553,6 +553,15 @@
       @apply float-none;
       > li {
         @apply float-none;
+        &:hover > a {
+          @apply text-primaryBlue #{!important};
+        }
+        &:hover > .menu-arrow {
+          @apply border-primaryBlue #{!important};
+        }
+        > a {
+          @apply text-black #{!important};
+        }
         .submenu {
           @apply hidden list-none pl-5 m-0;
           li {
@@ -595,6 +604,12 @@
         .submenu li a:hover,
         &.has-submenu.open > a {
           @apply text-indigo-600;
+        }
+      }
+      .has-submenu {
+        .menu-arrow {
+          border-width: 0 2px 2px 0;
+          @apply border-black;
         }
       }
     }
