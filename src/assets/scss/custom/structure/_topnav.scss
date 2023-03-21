@@ -2,7 +2,7 @@
 /*         Menu                  */
 /*===============================*/
 #topnav {
-  @apply fixed right-0 left-0 top-0 z-999 bg-transparent border-0 transition-all duration-500 ease-in-out py-6;
+  @apply fixed right-0 left-0 top-0 z-999 bg-transparent border-0 transition-all duration-500 ease-in-out;
   .logo-dark {
     display: none;
   }
@@ -59,7 +59,7 @@
   .navbar-toggle {
     @apply border-0 relative p-0 m-0 cursor-pointer;
     .lines {
-      @apply w-[25px] block relative h-[18px] mt-[30px] mr-0 mb-[26px] ml-[10px];
+      @apply w-[25px] block relative h-[18px]  mr-0  ml-[10px];
     }
     span {
       transition: transform 0.5s ease;
@@ -131,7 +131,7 @@
     > li {
       @apply float-left block relative my-0 mx-[10px];
       > a {
-        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-5 py-2 #{!important};
+        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-5 py-6 #{!important};
         &:hover,
         &:active {
           @apply text-white #{!important};
@@ -154,7 +154,7 @@
     .has-submenu {
       .menu-arrow {
         border-width: 0 2px 2px 0;
-        @apply border-white dark:border-white rounded-[0.5px] inline-block p-[3px] rotate-[45deg] absolute transition-all duration-500 -right-px top-[15px];
+        @apply border-white dark:border-white rounded-[0.5px] inline-block p-[3px] rotate-[45deg] absolute transition-all duration-500 -right-px top-[30px];
       }
       &:hover {
         .menu-arrow {
@@ -296,11 +296,19 @@
 
 @media (min-width: 992px) {
   #topnav {
+    .nav-container {
+      @apply pt-8;
+    }
+    &.nav-sticky {
+      .nav-container {
+        @apply pt-0;
+      }
+    }
     .navigation-menu {
       @apply flex flex-wrap justify-center;
       > .has-submenu {
         &:hover .menu-arrow {
-          @apply top-[18px] #{!important};
+          @apply top-[34px] #{!important};
         }
         &.active .menu-arrow {
           @apply top-[30px];
@@ -348,7 +356,7 @@
         &:hover,
         &.active {
           > a {
-            @apply bg-[rgba(25,25,255,0.4)]  #{!important};
+            @apply text-lightText  #{!important};
           }
         }
         &.last-elements {
@@ -432,7 +440,7 @@
         @apply flex flex-wrap justify-center;
         > .has-submenu {
           &:hover .menu-arrow {
-            @apply top-[10px] #{!important};
+            @apply top-[34px] border-primaryBlue #{!important};
           }
           &.active .menu-arrow {
             @apply top-[30px];
@@ -533,7 +541,10 @@
 
 @media (max-width: 991px) {
   #topnav {
-    @apply bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 min-h-[74px];
+    @apply bg-white dark:bg-slate-900 shadow dark:shadow-gray-800;
+    .nav-container {
+      @apply py-4;
+    }
     .logo {
       @apply hidden;
     }
@@ -560,7 +571,7 @@
           @apply border-primaryBlue #{!important};
         }
         > a {
-          @apply text-black #{!important};
+          @apply text-black py-1.5 #{!important};
         }
         .submenu {
           @apply hidden list-none pl-5 m-0;
@@ -638,7 +649,7 @@
   }
 
   #navigation {
-    @apply absolute top-[74px] left-0 w-full hidden h-auto bg-white dark:bg-slate-900 overflow-auto;
+    @apply absolute top-[65px] left-0 w-full hidden h-auto bg-white dark:bg-slate-900 overflow-auto;
     &.open {
       @apply block overflow-y-auto;
     }
@@ -647,6 +658,10 @@
 
 @media (max-width: 768px) {
   #topnav {
+    .nav-container {
+      @apply py-4;
+    }
+    @apply py-0;
     .navigation-menu {
       .has-submenu {
         .menu-arrow {
@@ -654,9 +669,16 @@
         }
       }
     }
+    .logo,
+    .logo-dark {
+      @apply max-w-[100px];
+    }
   }
   .nav-right {
     @apply hidden #{!important};
+  }
+  #navigation {
+    @apply top-[50px];
   }
 }
 
