@@ -29,8 +29,11 @@ h6,
   @apply text-primaryOrange 2xl:text-[1.32rem] font-medium uppercase mb-3;
 }
 .section-title {
-  @apply 2xl:text-5xl text-2xl md:text-3xl lg:text-4xl  font-bold 2xl:leading-[4.25rem] text-lightText max-w-[920px] mx-auto mb-10 xl:mb-[4.6rem];
+  @apply 2xl:text-5xl text-3xl md:text-3xl lg:text-4xl  font-bold 2xl:leading-[4.25rem] text-lightText max-w-[920px] mx-auto mb-10 xl:mb-[4.6rem];
 }
 .section-title-lg {
-  @apply 2xl:text-[3.375rem] text-2xl md:text-3xl lg:text-4xl  font-bold 2xl:leading-[4.25rem] text-lightText max-w-[920px] mx-auto mb-4 xl:mb-11;
+  @apply 2xl:text-[3.375rem] text-3xl md:text-3xl lg:text-4xl  font-bold 2xl:leading-[4.25rem] text-lightText max-w-[920px] mx-auto mb-4 xl:mb-11;
+}
+.btn {
+  @apply px-6 py-2.5 rounded-md flex items-center space-x-2 bg-primaryOrange text-lightText border-none font-medium #{!important};
 }
