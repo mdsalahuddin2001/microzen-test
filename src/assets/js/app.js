@@ -1,12 +1,3 @@
-/* Template Name: Techwind - Multipurpose Tailwind CSS Landing Page Template
-   Author: Shreethemes
-   Email: support@shreethemes.in
-   Website: https://shreethemes.in
-   Version: 1.4.0
-   Created: May 2022
-   File Description: Main JS file of the template
-*/
-
 /*********************************/
 /*         INDEX                 */
 /*================================
@@ -335,3 +326,28 @@ try {
     }, 200);
   }
 } catch (error) {}
+/*************************/
+/*      Iframe Lightbox       */
+/*************************/
+/*!
+ * modified Simple lightbox effect in pure JS
+ * @see {@link https://github.com/squeral/lightbox}
+ * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
+ * @params {Object} elem Node element
+ * @params {Object} [rate] debounce rate, default 500ms
+ * new IframeLightbox(elem)
+ * passes jshint
+ */
+!function(t,e){"use strict";var i=e.body||"",o="appendChild",n="classList",s="createElement",l="dataset",a="getElementsByClassName",d="addEventListener",r="iframe-lightbox",c="iframe-lightbox--open",h="iframe-lightbox-link--is-binded",f="is-loaded",u="is-opened",m="is-showing",p=function(t,i){var o=i||{};this.trigger=t,this.el=e[a](r)[0]||"",this.body=this.el?this.el[a]("body")[0]:"",this.content=this.el?this.el[a]("content")[0]:"",this.src=t[l].src||"",this.href=t.getAttribute("href")||"",this.dataPaddingBottom=t[l].paddingBottom||"",this.dataScrolling=t[l].scrolling||"",this.rate=o.rate||500,this.scrolling=o.scrolling,
+/*!
+     * Event handlers
+     */
+this.onOpened=o.onOpened,this.onIframeLoaded=o.onIframeLoaded,this.onLoaded=o.onLoaded,this.onCreated=o.onCreated,this.onClosed=o.onClosed,this.init()};p.prototype.init=function(){var t=this;this.el||this.create();var e=function(){t.open()};this.trigger[n].contains(h)||(this.trigger[n].add(h),this.trigger[d]("click",(function(t){var i,o,n,s,l,a;t.stopPropagation(),t.preventDefault(),(i=e,o=this.rate,function(){l=this,s=[].slice.call(arguments,0),a=new Date;var t=function(){var e=new Date-a;e<o?n=setTimeout(t,o-e):(n=null,i.apply(l,s))};n||(n=setTimeout(t,o))}).call()})))},p.prototype.create=function(){var l=this,a=e[s]("div");this.el=e[s]("div"),this.content=e[s]("div"),this.body=e[s]("div"),this.el[n].add(r),a[n].add("backdrop"),this.content[n].add("content"),this.body[n].add("body"),this.el[o](a),this.content[o](this.body),this.contentHolder=e[s]("div"),this.contentHolder[n].add("content-holder"),this.contentHolder[o](this.content),this.el[o](this.contentHolder),this.btnClose=e[s]("a"),this.btnClose[n].add("btn-close"),this.btnClose.setAttribute("href","javascript:void(0);"),this.el[o](this.btnClose),i[o](this.el),a[d]("click",(function(){l.close()})),this.btnClose[d]("click",(function(){l.close()})),t[d]("keyup",(function(t){27===(t.which||t.keyCode)&&l.close()}));var c=function(){l.isOpen()||(l.el[n].remove(m),l.body.innerHTML="")};this.el[d]("transitionend",c,!1),this.el[d]("webkitTransitionEnd",c,!1),this.el[d]("mozTransitionEnd",c,!1),this.el[d]("msTransitionEnd",c,!1),this.callCallback(this.onCreated,this)},p.prototype.loadIframe=function(){var t=this;this.iframeId=r+Date.now(),this.iframeSrc=this.src||this.href||"";
+/*!
+     * @see {@link https://stackoverflow.com/questions/18648203/how-remove-horizontal-scroll-bar-for-iframe-on-google-chrome}
+     */
+var i,o,s,l=[];l.push('<iframe src="'+this.iframeSrc+'" name="'+this.iframeId+'" id="'+this.iframeId+'" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>'),
+/*!
+     * @see {@link https://epic-spinners.epicmax.co/}
+     */
+l.push('<div class="half-circle-spinner"><div class="circle circle-1"></div><div class="circle circle-2"></div></div>'),this.body.innerHTML=l.join(""),i=this.iframeId,o=this.body,(s=e.getElementById(i)).onload=function(){this.style.opacity=1,o[n].add(f),t.scrolling||t.dataScrolling?(s.removeAttribute("scrolling"),s.style.overflow="scroll"):(s.setAttribute("scrolling","no"),s.style.overflow="hidden"),t.callCallback(t.onIframeLoaded,t),t.callCallback(t.onLoaded,t)}},p.prototype.open=function(){this.loadIframe(),this.dataPaddingBottom?this.content.style.paddingBottom=this.dataPaddingBottom:this.content.removeAttribute("style"),this.el[n].add(m),this.el[n].add(u),i[n].add(c),this.callCallback(this.onOpened,this)},p.prototype.close=function(){this.el[n].remove(u),this.body[n].remove(f),i[n].remove(c),this.callCallback(this.onClosed,this)},p.prototype.isOpen=function(){return this.el[n].contains(u)},p.prototype.callCallback=function(t,e){"function"==typeof t&&t.bind(this)(e)},t.IframeLightbox=p}("undefined"!=typeof window?window:this,document),function(t,e){"use strict";[].forEach.call(e.getElementsByClassName("iframe-lightbox-link"),(function(t){t.lightbox=new IframeLightbox(t,{onCreated:function(){},onLoaded:function(){},onError:function(){},onClosed:function(){},scrolling:!1,rate:500})}))}("undefined"!=typeof window&&window,document);

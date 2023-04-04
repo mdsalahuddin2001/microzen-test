@@ -624,9 +624,6 @@ video {
 .ml-2{
   margin-left: 0.5rem !important;
 }
-.mt-8{
-  margin-top: 2rem !important;
-}
 .mt-7{
   margin-top: 1.75rem !important;
 }
@@ -638,6 +635,9 @@ video {
 }
 .ml-auto{
   margin-left: auto !important;
+}
+.mt-8{
+  margin-top: 2rem !important;
 }
 .mb-10{
   margin-bottom: 2.5rem !important;
@@ -1027,6 +1027,9 @@ video {
 }
 .pb-24{
   padding-bottom: 6rem !important;
+}
+.pb-16{
+  padding-bottom: 4rem !important;
 }
 .pt-20{
   padding-top: 5rem !important;
@@ -3804,11 +3807,209 @@ h6,
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+/*!
+ * modified Simple lightbox effect in pure JS
+ * @see {@link https://github.com/squeral/lightbox}
+ * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
+ * passes jshint
+ */
+.iframe-lightbox,
+.iframe-lightbox .backdrop {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.iframe-lightbox {
+  display: none;
+  position: fixed;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  /*!
+   * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
+   * @see {@link https://github.com/englishextra/iframe-lightbox/issues/14}
+   */
+  z-index: 999999;
+}
+
+.iframe-lightbox .backdrop {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.92);
+  cursor: default;
+}
+
+.iframe-lightbox .content-holder {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-right: -50%;
+}
+
+.iframe-lightbox .content {
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.iframe-lightbox .content > .body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*!
+   * another pure css spinner
+   * @see {@link https://epic-spinners.epicmax.co/}
+   */
+.iframe-lightbox .content > .body .half-circle-spinner,
+.iframe-lightbox .content > .body .half-circle-spinner * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: calc(60px / 10) solid transparent;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle.circle-1 {
+  border-top-color: #ffffff;
+  -webkit-animation: half-circle-spinner-animation 1s infinite;
+          animation: half-circle-spinner-animation 1s infinite;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle.circle-2 {
+  border-bottom-color: #ffffff;
+  -webkit-animation: half-circle-spinner-animation 1s infinite alternate;
+          animation: half-circle-spinner-animation 1s infinite alternate;
+}
+
+@-webkit-keyframes half-circle-spinner-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes half-circle-spinner-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.iframe-lightbox .content > .body.is-loaded .half-circle-spinner {
+  display: none;
+}
+
+.iframe-lightbox iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  -webkit-box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
+          box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
+  /*!
+   * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
+   */
+  /* opacity: 0; */
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.iframe-lightbox.is-showing {
+  display: block;
+}
+
+.iframe-lightbox.is-opened {
+  opacity: 1;
+}
+
+.iframe-lightbox .btn-close {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+/*!
+   * pure css version
+   * @see {@link https://codepen.io/brissmyr/pen/egidw}
+   */
+.iframe-lightbox .btn-close:before,
+.iframe-lightbox .btn-close:after {
+  content: " ";
+  width: 0.125em;
+  height: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0.688em;
+  background-color: #ffffff;
+}
+
+.iframe-lightbox .btn-close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.iframe-lightbox .btn-close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/*!
+   * @see {@link https://github.com/englishextra/iframe-lightbox/issues/12}
+   */
+.iframe-lightbox--open {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-touch-action: auto;
+      touch-action: auto;
+  height: auto;
+}
 .before\:absolute::before{
   content: var(--tw-content) !important;
   position: absolute !important;
 }
-
 .before\:inset-0::before{
   content: var(--tw-content) !important;
   top: 0px !important;
@@ -3816,124 +4017,131 @@ h6,
   bottom: 0px !important;
   left: 0px !important;
 }
-
+.before\:top-0::before{
+  content: var(--tw-content) !important;
+  top: 0px !important;
+}
+.before\:left-0::before{
+  content: var(--tw-content) !important;
+  left: 0px !important;
+}
+.before\:mt-12::before{
+  content: var(--tw-content) !important;
+  margin-top: 3rem !important;
+}
+.before\:-mt-12::before{
+  content: var(--tw-content) !important;
+  margin-top: -3rem !important;
+}
+.before\:h-full::before{
+  content: var(--tw-content) !important;
+  height: 100% !important;
+}
+.before\:w-full::before{
+  content: var(--tw-content) !important;
+  width: 100% !important;
+}
 .before\:bg-\[url\(\'\/assets\/images\/hero_wave\.png\'\)\]::before{
   content: var(--tw-content) !important;
   background-image: url('/assets/images/hero_wave.png') !important;
 }
-
+.before\:bg-\[url\(\'\/assets\/images\/why_microzen_wave\.png\'\)\]::before{
+  content: var(--tw-content) !important;
+  background-image: url('/assets/images/why_microzen_wave.png') !important;
+}
+.before\:bg-\[url\(\'\/assets\/images\/microfinance_software_wave\.png\'\)\]::before{
+  content: var(--tw-content) !important;
+  background-image: url('/assets/images/microfinance_software_wave.png') !important;
+}
 .before\:bg-center::before{
   content: var(--tw-content) !important;
   background-position: center !important;
 }
-
 .before\:bg-no-repeat::before{
   content: var(--tw-content) !important;
   background-repeat: no-repeat !important;
 }
-
 .hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity)) !important;
 }
-
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
-
 .hover\:text-indigo-600:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(79 70 229 / var(--tw-text-opacity)) !important;
 }
-
 .hover\:text-white\/50:hover{
   color: rgb(255 255 255 / 0.5) !important;
 }
-
 .focus\:outline-none:focus{
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
 }
-
 .dark .dark\:bg-slate-900{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:bg-white{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:bg-gray-800{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:bg-gray-800\/50{
   background-color: rgb(31 41 55 / 0.5) !important;
 }
-
 .dark .dark\:bg-slate-800{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:bg-slate-50{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:bg-opacity-80{
   --tw-bg-opacity: 0.8 !important;
 }
-
 .dark .dark\:text-emerald-500{
   --tw-text-opacity: 1 !important;
   color: rgb(16 185 129 / var(--tw-text-opacity)) !important;
 }
-
 .dark .dark\:text-slate-200{
   --tw-text-opacity: 1 !important;
   color: rgb(226 232 240 / var(--tw-text-opacity)) !important;
 }
-
 .dark .dark\:text-white{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
-
 .dark .dark\:text-gray-200{
   --tw-text-opacity: 1 !important;
   color: rgb(229 231 235 / var(--tw-text-opacity)) !important;
 }
-
 .dark .dark\:text-slate-900{
   --tw-text-opacity: 1 !important;
   color: rgb(15 23 42 / var(--tw-text-opacity)) !important;
 }
-
 .dark .dark\:shadow-gray-800{
   --tw-shadow-color: #1f2937 !important;
   --tw-shadow: var(--tw-shadow-colored) !important;
 }
-
 .dark .dark\:hover\:bg-slate-800:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:hover\:bg-gray-800:hover{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }
-
 .dark .dark\:hover\:text-white:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
-
 @media (min-width: 640px){
   .sm\:left-0{
     left: 0px !important;
@@ -3942,7 +4150,6 @@ h6,
     right: 0px !important;
   }
 }
-
 @media (min-width: 768px){
   .md\:-order-1{
     -webkit-box-ordinal-group: 0 !important;
@@ -4003,7 +4210,6 @@ h6,
     text-align: left !important;
   }
 }
-
 @media (min-width: 1024px){
   .lg\:col-span-10{
     grid-column: span 10 / span 10 !important;
@@ -4045,7 +4251,6 @@ h6,
     line-height: 60px !important;
   }
 }
-
 @media (min-width: 1536px){
   .\32xl\:mb-11{
     margin-bottom: 2.75rem !important;
@@ -4080,7 +4285,6 @@ h6,
     line-height: 70px !important;
   }
 }
-
 @media (min-width: 1920px){
   .\33xl\:mt-8{
     margin-top: 2rem !important;
@@ -4098,5 +4302,8 @@ h6,
   .\33xl\:pt-16{
     padding-top: 4rem !important;
   }
+}
+.\[\&\>\*\]\:mt-4>*{
+  margin-top: 1rem !important;
 }
 /*# sourceMappingURL=tailwind.css.map */

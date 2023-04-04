@@ -35,7 +35,11 @@
                             </div>
                         
                             <div class="mt-6">
-                                <a href="#!" data-type="youtube" data-id="kEFIdXzQXYw" class="flex items-center space-x-6 lightbox"><img src="./assets/images/icons/player.svg" alt="arrow"><span class="ml-2  align-middle text-[#FFF7E9] font-normal">See How it Works</span></a>
+                                <a
+                                href="https://www.youtube.com/embed/BihZd2x8Qh8"
+                                data-padding-bottom="56.25%"
+                                aria-hidden="true"
+                                rel="lightbox" class="flex items-center space-x-6 iframe-lightbox-link"><img src="./assets/images/icons/player.svg" alt="arrow"><span class="ml-2  align-middle text-[#FFF7E9] font-normal">See How it Works</span></a>
                             </div>
                         </div>
                     </div><!--end col-->
@@ -50,13 +54,15 @@
         </section><!--end section-->
         <!-- End Hero -->
        <!-- Why microzen -->
-      <section class="pb-24 bg-primaryBlue font-poppins">
+      <section class="relative pb-24 bg-primaryBlue font-poppins">
         <div class="container">
             <h4 class="text-center section-subtitle">
             why microzen
             </h4>
             <h2 class="text-center section-title">Creativity is nothing but the way to solve new problems.</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 mt-8 gap-[30px]">
+        </div>
+        <div class="relative w-full before:absolute before:inset-0 before:bg-[url('/assets/images/why_microzen_wave.png')]  before:bg-no-repeat before:mt-12 pb-16">
+            <div class="container grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2  gap-[30px]">
                 <!-- item starts -->
                 <div class="px-9 pt-20 pb-10 bg-[rgba(255,255,255,0.04)] rounded-xl">
                     <div>
@@ -112,30 +118,36 @@
       </section>
    <!-- Why microzen ends -->
    <!-- micro finance software -->
-<section class=" bg-darkBlue font-poppins">
-    <div class="container">
-        <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
-            <div class="order-2 md:col-span-6 md:-order-1">
-       <div class="py-4">
-        <h4 class="section-subtitle">Microfinance Software</h4>
-        <h2 class="section-title-lg">Our Microfinance Software is more powerful & easy than a banking solution</h2>
-        <p class="mb-5 text-lg text-white/50 2xl:mb-11">Whether you are a small MFI looking to make a change or the industry leader, our flagship product Ascend Financials is your one-stop microfinance solution. Don’t believe us? See for yourself!</p>
-        <div class="items-center justify-between space-y-6 md:space-y-8 lg:flex lg:space-y-0">
-            <a href="#!" data-type="youtube" data-id="kEFIdXzQXYw" class="flex items-center space-x-6 lightbox"><img src="./assets/images/icons/player.svg" alt="arrow"><span class="ml-2  align-middle text-[#FFF7E9] font-normal">See How it Works</span></a>
-            <div>
-                <button class="btn"><span>Request Demo</span><img src="/assets/images/icons/arrow-right.svg" alt="arrow-right"></button>
-            </div>
-        </div>
-       </div>
-            </div><!--end col-->
-            <div class="md:col-span-6">
-                <div class="grid items-center grid-cols-12 gap-4">
-                    <div class="col-span-12">
-                        <img src="assets/images/mobile_illustration.png" class="rounded-lg shadow" alt="mobile_illustration">
-                     
-                    </div>
+ <section class=" bg-darkBlue font-poppins">
+    <div class="relative w-full before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-[url('/assets/images/microfinance_software_wave.png')]  before:bg-no-repeat before:-mt-12">
+        <div class="container">
+            <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
+                <div class="order-2 md:col-span-6 md:-order-1">
+           <div class="py-4">
+            <h4 class="section-subtitle">Microfinance Software</h4>
+            <h2 class="section-title-lg">Our Microfinance Software is more powerful & easy than a banking solution</h2>
+            <p class="mb-5 text-lg text-white/50 2xl:mb-11">Whether you are a small MFI looking to make a change or the industry leader, our flagship product Ascend Financials is your one-stop microfinance solution. Don’t believe us? See for yourself!</p>
+            <div class="items-center justify-between space-y-6 md:space-y-8 lg:flex lg:space-y-0">
+                <a
+                href="https://www.youtube.com/embed/qywBUXBvbfo"
+                data-padding-bottom="56.25%"
+                aria-hidden="true"
+                rel="lightbox" class="flex items-center space-x-6 iframe-lightbox-link"><img src="./assets/images/icons/player.svg" alt="arrow"><span class="ml-2  align-middle text-[#FFF7E9] font-normal">See How it Works</span></a>
+                <div>
+                    <button class="btn"><span>Request Demo</span><img src="/assets/images/icons/arrow-right.svg" alt="arrow-right"></button>
                 </div>
-            </div><!--end col-->
+            </div>
+           </div>
+                </div><!--end col-->
+                <div class="md:col-span-6">
+                    <div class="grid items-center grid-cols-12 gap-4">
+                        <div class="col-span-12">
+                            <img src="assets/images/mobile_illustration.png" class="rounded-lg shadow" alt="mobile_illustration">
+                         
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div>
         </div>
     </div>
 </section>
@@ -195,7 +207,7 @@
             <!-- item starts -->
             <div class="px-6 py-11 bg-[rgba(255,255,255,0.04)] rounded-xl">
                     <p class="mb-10 text-lg text-white/50">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit exercitation veniam.</p>
-                    <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex flex-wrap items-center justify-between [&>*]:mt-4">
                         <div class="flex items-center space-x-4">
                             <img src="assets/images/users/author.png" alt="author" class="w-[60px] h-[60px] rounded-full">
                             <div>
@@ -217,7 +229,7 @@
             <!-- item starts -->
             <div class="px-6 py-11 bg-[rgba(255,255,255,0.04)] rounded-xl">
                     <p class="mb-10 text-lg text-white/50">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit exercitation veniam.</p>
-                    <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex flex-wrap items-center justify-between [&>*]:mt-4">
                         <div class="flex items-center space-x-4">
                             <img src="assets/images/users/author.png" alt="author" class="w-[60px] h-[60px] rounded-full">
                             <div>
@@ -239,7 +251,7 @@
             <!-- item starts -->
             <div class="px-6 py-11 bg-[rgba(255,255,255,0.04)] rounded-xl">
                     <p class="mb-10 text-lg text-white/50">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit exercitation veniam.</p>
-                    <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex flex-wrap items-center justify-between [&>*]:mt-4">
                         <div class="flex items-center space-x-4">
                             <img src="assets/images/users/author.png" alt="author" class="w-[60px] h-[60px] rounded-full">
                             <div>
