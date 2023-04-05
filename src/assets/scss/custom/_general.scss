@@ -3,6 +3,9 @@
 /*********************************/
 /*             General            */
 /*===============================*/
+section {
+  overflow: hidden;
+}
 p {
   @apply leading-relaxed;
 }
