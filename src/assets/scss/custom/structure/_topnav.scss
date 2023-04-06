@@ -6,56 +6,7 @@
   .logo-dark {
     display: none;
   }
-  .has-submenu {
-    @apply relative;
-    &.active {
-      a {
-        @apply text-white dark:text-slate-900;
-      }
-      .submenu {
-        li {
-          &.active {
-            > a {
-              @apply text-indigo-600 dark:text-indigo-600 #{!important};
-            }
-          }
-        }
-      }
-      &.active {
-        .menu-arrow {
-          @apply border-indigo-600 dark:border-indigo-600;
-        }
-      }
-    }
-    .submenu {
-      .submenu-arrow {
-        border-width: 0px 0.125rem 0.125rem 0px;
-        @apply absolute right-[1.25rem] top-[0.8125rem] border-black dark:border-white rounded-[0.5px] inline-block p-[0.1875rem] -rotate-[45deg];
-      }
-      .has-submenu {
-        &:hover {
-          /* .submenu-arrow {
-              @apply border-indigo-600 dark:border-indigo-600;
-            } */
-          > .submenu-arrow {
-            @apply border-indigo-600 dark:border-indigo-600;
-          }
-        }
-        .submenu {
-          .has-submenu {
-            &:hover {
-              .submenu-arrow {
-                @apply border-indigo-600 dark:border-indigo-600;
-              }
-              > .submenu-arrow {
-                @apply border-indigo-600 dark:border-indigo-600;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+
   .navbar-toggle {
     @apply border-0 relative p-0 m-0 cursor-pointer;
     .lines {
@@ -63,7 +14,7 @@
     }
     span {
       transition: transform 0.5s ease;
-      @apply h-[2px] w-full bg-black dark:bg-white block mb-[5px];
+      @apply h-[2px] w-full bg-primaryBlue dark:bg-white block mb-[5px];
       &:last-child {
         @apply mb-0;
       }
@@ -131,16 +82,14 @@
     > li {
       @apply float-left block relative my-0 mx-[10px];
       > a {
-        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-5 py-6 #{!important};
-        &:hover,
-        &:active {
-          @apply text-white #{!important};
+        @apply block text-[#FFF7E9] dark:text-white text-base bg-transparent font-normal tracking-[1px] leading-6  px-2 py-6 #{!important};
+        &.active {
+          @apply text-primaryBlue #{!important};
         }
       }
-      &:hover,
-      &.active {
+      &:hover {
         > a {
-          @apply text-white #{!important};
+          @apply text-primaryOrange #{!important};
         }
       }
       .submenu.megamenu {
@@ -148,17 +97,6 @@
           .megamenu-head {
             @apply py-[10px] px-5 whitespace-nowrap text-xs uppercase tracking-[0.04em] font-bold text-slate-400 #{!important};
           }
-        }
-      }
-    }
-    .has-submenu {
-      .menu-arrow {
-        border-width: 0 2px 2px 0;
-        @apply border-white dark:border-white rounded-[0.5px] inline-block p-[3px] rotate-[45deg] absolute transition-all duration-500 -right-px top-[30px];
-      }
-      &:hover {
-        .menu-arrow {
-          @apply rotate-[225deg];
         }
       }
     }
@@ -209,6 +147,9 @@
       & > li {
         & > a {
           @apply text-black #{!important};
+          &.active {
+            @apply text-primaryBlue #{!important};
+          }
         }
       }
       &.nav-light {
@@ -235,16 +176,6 @@
             }
           }
         }
-        .has-submenu {
-          .menu-arrow {
-            @apply border-black dark:border-white;
-          }
-        }
-      }
-      .has-submenu {
-        .menu-arrow {
-          @apply border-black;
-        }
       }
     }
     &.tagline-height {
@@ -266,35 +197,7 @@
   @apply font-bold text-[24px] mr-[15px] pt-0 px-[6px] pb-0 tracking-[1px];
 }
 
-@media (min-width: 1025px) {
-  #topnav {
-    .navigation-menu {
-      > li {
-        .submenu {
-          &.megamenu {
-            @apply w-[1120px] #{!important};
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 992px) {
-  #topnav {
-    .navigation-menu {
-      > li {
-        .submenu {
-          &.megamenu {
-            @apply w-[936px] #{!important};
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 992px) {
+@media (min-width: 1171px) {
   #topnav {
     .nav-container {
       @apply pt-8;
@@ -306,47 +209,12 @@
     }
     .navigation-menu {
       @apply flex flex-wrap justify-center;
-      > .has-submenu {
-        &:hover .menu-arrow {
-          @apply top-[34px] #{!important};
-        }
-        &.active .menu-arrow {
-          @apply top-[30px];
-        }
-      }
+
       > li {
-        .submenu {
-          transition: all 0.2s ease;
-          @apply absolute top-full left-0 z-[1000] py-[15px] px-0 list-none min-w-[180px] invisible opacity-0 mt-[10px] rounded-md bg-white dark:bg-slate-900 shadow dark:shadow-gray-800;
-          li {
-            @apply relative;
-            a {
-              transition: all 0.3s;
-              @apply block py-[10px] px-5 clear-both whitespace-nowrap text-[11px] uppercase tracking-[0.04em] font-bold text-black dark:text-white leading-[17px];
-              &:hover {
-                @apply text-indigo-600 dark:text-indigo-600 #{!important};
-              }
-            }
-            ul {
-              @apply list-none pl-0 m-0;
-            }
-          }
-          &.megamenu {
-            @apply whitespace-nowrap left-1/2 -translate-x-1/2 fixed top-auto flex;
-            > li {
-              @apply overflow-hidden align-top w-1/5;
-              .submenu {
-                @apply left-full top-0 ml-[10px] -mt-px;
-              }
-            }
-          }
-          > li {
-            .submenu {
-              @apply left-[101%] top-0 ml-[10px] -mt-px;
-            }
-          }
-        }
         > a {
+          &.active {
+            @apply text-primaryOrange #{!important};
+          }
         }
         &:hover {
           > .menu-arrow {
@@ -356,19 +224,12 @@
         &:hover,
         &.active {
           > a {
-            @apply text-lightText  #{!important};
+            @apply text-primaryOrange  #{!important};
           }
         }
         &.last-elements {
           .submenu {
             @apply left-auto right-0 before:left-auto before:right-[10px];
-            > li {
-              &.has-submenu {
-                .submenu {
-                  @apply left-auto right-full ml-0 mr-[10px];
-                }
-              }
-            }
           }
         }
       }
@@ -388,16 +249,6 @@
             }
             > a {
               @apply text-white #{!important};
-            }
-          }
-        }
-        .has-submenu {
-          .menu-arrow {
-            @apply border-white/50;
-          }
-          &.active {
-            .menu-arrow {
-              @apply border-white #{!important};
             }
           }
         }
@@ -438,14 +289,7 @@
       }
       .navigation-menu {
         @apply flex flex-wrap justify-center;
-        > .has-submenu {
-          &:hover .menu-arrow {
-            @apply top-[34px] border-primaryBlue #{!important};
-          }
-          &.active .menu-arrow {
-            @apply top-[30px];
-          }
-        }
+
         > li {
           .submenu {
             transition: all 0.2s ease;
@@ -494,13 +338,6 @@
           &.last-elements {
             .submenu {
               @apply left-auto right-0 before:left-auto before:right-[10px];
-              > li {
-                &.has-submenu {
-                  .submenu {
-                    @apply left-auto right-full ml-0 mr-[10px];
-                  }
-                }
-              }
             }
           }
         }
@@ -523,23 +360,13 @@
               }
             }
           }
-          .has-submenu {
-            .menu-arrow {
-              @apply border-white/50;
-            }
-            &.active {
-              .menu-arrow {
-                @apply border-white #{!important};
-              }
-            }
-          }
         }
       }
     }
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1170px) {
   #topnav {
     @apply bg-white dark:bg-slate-900 shadow dark:shadow-gray-800;
     .nav-container {
@@ -611,17 +438,6 @@
         > a {
           @apply text-black dark:text-white py-[10px] px-[20px] after:absolute after:right-[15px];
         }
-        > a:hover,
-        .submenu li a:hover,
-        &.has-submenu.open > a {
-          @apply text-indigo-600;
-        }
-      }
-      .has-submenu {
-        .menu-arrow {
-          border-width: 0 2px 2px 0;
-          @apply border-black;
-        }
       }
     }
     .menu-extras {
@@ -633,25 +449,12 @@
     .navbar-header {
       @apply float-left;
     }
-
-    .has-submenu {
-      .submenu {
-        .submenu-arrow {
-          @apply rotate-[45deg] absolute right-5 top-3;
-        }
-      }
-      &.active {
-        a {
-          @apply text-indigo-600;
-        }
-      }
-    }
   }
 
   #navigation {
-    @apply absolute top-[65px] left-0 w-full hidden h-auto bg-white dark:bg-slate-900 overflow-auto;
+    @apply absolute top-[65px] left-0 w-full h-0 opacity-0 pb-4 bg-white dark:bg-slate-900 overflow-auto transition-all duration-300;
     &.open {
-      @apply block overflow-y-auto;
+      @apply h-[230px] opacity-100;
     }
   }
 }
@@ -662,13 +465,6 @@
       @apply py-4;
     }
     @apply py-0;
-    .navigation-menu {
-      .has-submenu {
-        .menu-arrow {
-          @apply right-2 top-4;
-        }
-      }
-    }
     .logo,
     .logo-dark {
       @apply max-w-[100px];
@@ -683,35 +479,6 @@
 }
 
 @media (min-width: 768px) {
-  #topnav {
-    .navigation-menu {
-      > li {
-        &.has-submenu {
-          &:hover {
-            > .submenu {
-              @apply visible opacity-100 mt-0;
-              > li {
-                &.has-submenu {
-                  &:hover {
-                    > .submenu {
-                      @apply visible opacity-100 ml-0 mr-0;
-                      > li {
-                        &:hover {
-                          > .submenu {
-                            @apply visible opacity-100 ml-0 mr-0;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   .navbar-toggle {
     @apply block;
   }
