@@ -385,7 +385,7 @@
       @apply w-auto;
     }
     #navigation {
-      @apply max-h-[400px] shadow;
+      @apply max-h-[420px] shadow;
     }
     .navigation-menu {
       @apply float-none;
@@ -452,7 +452,7 @@
   }
 
   #navigation {
-    @apply absolute top-[65px] left-0 w-full h-0 opacity-0 pb-4 bg-white dark:bg-slate-900 overflow-auto transition-all duration-300;
+    @apply absolute top-[65px] left-0 w-full h-0 opacity-0 pb-4 bg-white dark:bg-slate-900 overflow-hidden transition-all duration-300;
     &.open {
       @apply h-[230px] opacity-100;
     }
